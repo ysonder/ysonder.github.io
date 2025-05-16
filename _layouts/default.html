@@ -2,17 +2,36 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }} | {{ site.title }}</title>
   <style>
     body {
-      font-family: sans-serif;
-      margin: 2em auto;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: #fdfdfd;
+      color: #333;
       max-width: 700px;
-      padding: 0 1em;
+      margin: 2em auto;
+      padding: 1em;
       line-height: 1.6;
     }
+    header {
+      text-align: center;
+      margin-bottom: 2em;
+    }
     nav a {
-      margin-right: 1em;
+      margin: 0 10px;
+      text-decoration: none;
+      color: #0366d6;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      margin-top: 3em;
+      text-align: center;
+      font-size: 0.9em;
+      color: #999;
     }
   </style>
 </head>
@@ -22,11 +41,17 @@
     <nav>
       <a href="{{ '/' | relative_url }}">Inicio</a>
       <a href="{{ '/about' | relative_url }}">Sobre mí</a>
+      <a href="{{ '/projects' | relative_url }}">Proyectos</a>
+      <a href="{{ '/contact' | relative_url }}">Contacto</a>
     </nav>
-    <hr>
   </header>
+
   <main>
     {{ content }}
   </main>
+
+  <footer>
+    © {{ site.time | date: '%Y' }} {{ site.title }} · Hecho con Jekyll
+  </footer>
 </body>
 </html>
